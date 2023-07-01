@@ -11,15 +11,13 @@ const fName=['Rasif','shifat','takmim','mamun','ali']
 app.get('/fName/:id', (req, res)=>{
     const id= req.params.id;
     // console.log(req.query)
-    console.log(req.query.sort)
+    // console.log(req.query.sort)
     const name=fName[id];
         // res.send(name);
         res.send({id, name});
 })
 
-app.post('/addUser',(req,res)=>{
-        console.log(req.body);
-})
+
 
 
 app.listen(3000,()=>{

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>I m learning node</title>
+</head>
+<body>
+    <h2>Hello this is node mongo client</h2>
+
+    <p id="userName"></p>
+    <!-- hay this is container -->
+    <div class="container">
+        <div class="row">
+            <input type="text" class="form-control" placeholder="Write username" id="user">
+            <button class="btn btn-primary" id="addUser">AddUser</button>
+        </div>
+    </div>
+    <!-- Script -->
+    <script>
+        fetch('http://localhost:3000/fName/0')
+        .then(res=>res.json())
+        .then(data=>{
+            document.getElementById('userName').innerText = data.name;
+        });
+
+        // post data from the user
+        const userData= document.getElementById('addUser');
+        userData.addEventListener('click', ()=>{
+            let name =  document.getElementById("user").value;
+            const user={name}
+        })
+    </script>
+</body>
+</html>
